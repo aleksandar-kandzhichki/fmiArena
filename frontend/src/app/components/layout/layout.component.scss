@@ -1,0 +1,27 @@
+@import '_sizes.scss';
+nav {
+    padding: 0 50px 0 30px;
+    background-color: #333;
+    height: $nav-heigth;
+    .fmi-nav {
+        display: flex;
+        height: $nav-heigth;
+        line-height: $nav-heigth;
+        justify-content: space-between;
+        .fmi-logo {
+            background-image: url('/assets/images/fmi-logo.jpg');
+            width: 82px;
+            background-size: contain;
+        }
+    }
+    a {
+        margin: 0 0 0 10px;
+        padding: 10px;
+        display: inline;
+        background-color: transparent;
+        color: white;
+    }
+    a:hover {
+        background-color: #4CAF50;
+    }
+}
