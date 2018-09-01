@@ -1,12 +1,16 @@
 <nav>
   <div class="fmi-nav">
-    <div class="fmi-logo"> </div>
-    
-    <div>
-      <a routerLink="/problems">Problems</a>
-      <a routerLink="/competitions">Content</a>
+    <div class="nav-content">
+      <div routerLink="/" class="fmi-logo"> </div>
+
+      <div>
+        <a routerLink="/problems">Problems</a>
+        <a routerLink="/competitions">Competitions</a>
+      </div>
     </div>
   </div>
 </nav>
 
-<router-outlet></router-outlet>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

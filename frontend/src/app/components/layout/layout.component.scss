@@ -1,17 +1,22 @@
 @import '_sizes.scss';
 nav {
-    padding: 0 50px 0 30px;
-    background-color: #333;
     height: $nav-heigth;
+    position: relative;
     .fmi-nav {
-        display: flex;
+        background-color: #333;
+        width: 100%;
+        position: fixed;
         height: $nav-heigth;
         line-height: $nav-heigth;
-        justify-content: space-between;
-        .fmi-logo {
-            background-image: url('/assets/images/fmi-logo.jpg');
-            width: 82px;
-            background-size: contain;
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            .fmi-logo {
+                cursor: pointer;
+                background-image: url('/assets/images/fmi-logo.jpg');
+                width: 82px;
+                background-size: contain;
+            }
         }
     }
     a {
@@ -24,4 +29,10 @@ nav {
     a:hover {
         background-color: #4CAF50;
     }
+}
+
+.content {
+    background-color: white;
+    padding: 10px 0 10px 0;
+    min-height: calc(100vh - #{$nav-heigth} - 20px); // height: 100%;
 }
