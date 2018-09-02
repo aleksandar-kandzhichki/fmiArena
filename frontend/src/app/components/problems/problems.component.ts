@@ -17,6 +17,7 @@ export class ProblemsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.getProblems();
   }
 
   changeSelectedTopics(topics: number[]) {
@@ -26,6 +27,8 @@ export class ProblemsComponent implements OnInit {
   }
 
   getProblems() {
-    this.filteredProblems = this.allProblems.filter(problem => this.selectedTopics.some(selectedTopic => problem.topics.indexOf(selectedTopic) >= 0));
+    if (this.selectedTopics && this.selectedTopics.length > 0)
+      this.filteredProblems = this.allProblems.filter(problem => this.selectedTopics.some(selectedTopic => problem.topics.indexOf(selectedTopic) >= 0));
+    else this.filteredProblems = JSON.parse(JSON.stringify(this.allProblems));
   }
 }

@@ -1,6 +1,6 @@
 <app-select-problems many="true" (onManySelect)="changeSelectedTopics($event)"></app-select-problems>
 
-<h1> Problems </h1>
+<h1> Problems <span *ngIf="!this.selectedTopics || this.selectedTopics.length == 0"> (all)</span></h1>
 <mat-accordion>
   <mat-expansion-panel *ngFor="let problem of filteredProblems">
     <mat-expansion-panel-header>
