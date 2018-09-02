@@ -1,5 +1,8 @@
 export enum Sciences {
     Math,
     Informatics,
-    Physics
+    Physics,
+    Algorithms
 }
+
+export const ScienceNames = ['Mathematics', "Informatics", "Physics", "Algorithms"]

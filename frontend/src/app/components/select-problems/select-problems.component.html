@@ -1,0 +1,25 @@
+<mat-tab-group>
+  <mat-tab [label]="ScienceNames[Sciences.Math]">
+    <div class="problems-topic">
+      <button mat-raised-button *ngFor="let topic of MathTopicNames" [class.active]="isTopicActive(topic)" [innerHTML]="topic"
+        (click)="selectTopic(topic)"></button>
+    </div>
+  </mat-tab>
+  <mat-tab [label]="ScienceNames[Sciences.Informatics]">
+    <div class="problems-topic">
+      <button mat-raised-button *ngFor="let topic of InformaticTopicNames" [class.active]="isTopicActive(topic)" [innerHTML]="topic"
+        (click)="selectTopic(topic)"></button>
+    </div>
+  </mat-tab>
+  <mat-tab [label]="ScienceNames[Sciences.Physics]">
+    <div class="problems-topic">
+      No data yet!
+    </div>
+  </mat-tab>
+  <mat-tab [label]="ScienceNames[Sciences.Algorithms]">
+    <div class="problems-topic">
+      <button mat-raised-button *ngFor="let topic of AlgorithmTopicNames" [class.active]="isTopicActive(topic)" [innerHTML]="topic"
+        (click)="selectTopic(topic)"></button>
+    </div>
+  </mat-tab>
+</mat-tab-group>

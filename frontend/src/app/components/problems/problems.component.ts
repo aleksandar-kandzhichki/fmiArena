@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AllTopics } from '../../../../../data/topics'
 
 @Component({
   selector: 'app-problems',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./problems.component.scss']
 })
 export class ProblemsComponent implements OnInit {
+
+  selectedTopics: number[] = [];
+  AllTopics = AllTopics
 
   constructor() { }
 

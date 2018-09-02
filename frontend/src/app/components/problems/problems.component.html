@@ -1,3 +1,7 @@
+<app-select-problems many="true" (onManySelect)="selectedTopics = $event"></app-select-problems>
+
 <p>
-  problems works!
+  problems works! SELECTED PROBLEM:
+  <br>
+  <span *ngFor="let topic of selectedTopics">{{AllTopics[topic]}}<br></span>
 </p>
