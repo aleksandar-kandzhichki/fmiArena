@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatToolbar, MatTabGroup, MatTab, MatTabsModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatToolbar, MatTabGroup, MatTab, MatTabsModule, MatExpansionModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -29,7 +29,8 @@ import { SelectProblemsComponent } from './components/select-problems/select-pro
     ),
     BrowserAnimationsModule,
     MatTabsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

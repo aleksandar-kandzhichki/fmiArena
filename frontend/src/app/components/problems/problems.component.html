@@ -1,7 +1,16 @@
-<app-select-problems many="true" (onManySelect)="selectedTopics = $event"></app-select-problems>
+<app-select-problems many="true" (onManySelect)="changeSelectedTopics($event)"></app-select-problems>
 
-<p>
-  problems works! SELECTED PROBLEM:
-  <br>
-  <span *ngFor="let topic of selectedTopics">{{AllTopics[topic]}}<br></span>
-</p>
+<h1> Problems </h1>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let problem of filteredProblems">
+    <mat-expansion-panel-header>
+      <mat-panel-title [innerHTML]="problem.name">
+      </mat-panel-title>
+      <!-- <mat-panel-description>
+        Type your name and age
+      </mat-panel-description> -->
+    </mat-expansion-panel-header>
+    <p [innerHTML]="problem.content"></p>
+    <p [innerHTML]="problem.restrains.memory + '  ' + problem.restrains.time"></p>
+  </mat-expansion-panel>
+</mat-accordion>

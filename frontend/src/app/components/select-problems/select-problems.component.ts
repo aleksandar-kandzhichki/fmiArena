@@ -73,6 +73,8 @@ export class SelectProblemsComponent implements OnInit {
     if (index > -1) {
       this.selectedTopicsNames.splice(index, 1);
       this.selectedTopics.splice(index, 1);
+
+      this.onManySelect.emit(this.selectedTopics);
       return;
     }
 
