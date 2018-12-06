@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatToolbar, MatTabGroup, MatTab, MatTabsModule, MatExpansionModule } from '@angular/material';
+import { MatButtonModule, MatTabsModule, MatExpansionModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -11,6 +11,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { ProblemsComponent } from './components/problems/problems.component';
 import { CompetitionsComponent } from './components/competitions/competitions.component';
 import { SelectProblemsComponent } from './components/select-problems/select-problems.component';
+import { SingleProblemComponent } from './components/single-problem/single-problem.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { SelectProblemsComponent } from './components/select-problems/select-pro
     LayoutComponent,
     ProblemsComponent,
     CompetitionsComponent,
-    SelectProblemsComponent
+    SelectProblemsComponent,
+    SingleProblemComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +33,12 @@ import { SelectProblemsComponent } from './components/select-problems/select-pro
     BrowserAnimationsModule,
     MatTabsModule,
     MatButtonModule,
-    MatExpansionModule
+    MatExpansionModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HttpClient
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

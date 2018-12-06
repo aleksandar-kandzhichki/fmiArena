@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AllTopics } from '../../../../../data/topics'
-import { problems, Problem } from '../../../../../data/problems';
+import { problems, IProblem } from '../../../../../data/problems';
 
 @Component({
   selector: 'app-problems',
@@ -12,7 +12,7 @@ export class ProblemsComponent implements OnInit {
   selectedTopics: number[] = [];
   AllTopics = AllTopics;
   allProblems = problems;
-  filteredProblems: Problem[] = [];
+  filteredProblems: IProblem[] = [];
 
   constructor() { }
 
