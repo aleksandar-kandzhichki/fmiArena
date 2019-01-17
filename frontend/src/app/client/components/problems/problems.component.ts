@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AllTopics } from '../../../../../data/topics'
-import { problems, IProblem } from '../../../../../data/problems';
+import { AllTopics } from '../../../../../../data/topics'
+import { problems, IProblem } from '../../../../../../data/problems';
 
 @Component({
   selector: 'app-problems',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProblemsService } from '../../services/problems.service';
-import { IProblem, Problem } from '../../../../../data/problems';
+import { IProblem, Problem } from '../../../../../../data/problems';
 
 @Component({
   selector: 'app-single-problem',

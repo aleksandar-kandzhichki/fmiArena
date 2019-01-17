@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Sciences, ScienceNames } from '../../../../../data/science';
-import { AllTopics, MathTopics, AlogrihmTopics, InformaticTopics } from '../../../../../data/topics';
+import { Sciences, ScienceNames } from '../../../../../../data/science';
+import { AllTopics, MathTopics, AlogrihmTopics, InformaticTopics } from '../../../../../../data/topics';
 
 @Component({
   selector: 'app-select-problems',
