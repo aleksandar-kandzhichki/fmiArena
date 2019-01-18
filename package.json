@@ -1,0 +1,25 @@
+{
+    "name": "fmi-arena-project",
+    "version": "1.0.0",
+    "description": "FMI",
+    "scripts": {
+      "start": "cd frontend && npm start",
+      "backend-browse-linux": "xdg-open http://localhost:3000/api",
+      "backend-browse-windows": "start http://localhost:3000/api",
+      "build": "cd backend && npm run build",
+      "build-angular": "cd frontend && npm run build",
+      "build-run": "cd backend && npm run build && npm start",
+      "start-browse-windows": "npm run build && npm run backend-browse-windows && npm run start",
+      "start-browse-linux": "npm run build && npm run backend-browse-linux && npm run start",
+      "build-browse-windows": "npm run build && npm run backend-browse-windows",
+      "build-browse-linux": "npm run build && npm run backend-browse-linux"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/aleksandar-kandzhichki/fmiArena"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {}
+  }
+  

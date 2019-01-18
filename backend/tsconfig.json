@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "build/backend",
+        "outDir": "build",
         "removeComments": true,
         "preserveConstEnums": true,
         "alwaysStrict": true,

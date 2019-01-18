@@ -5,17 +5,20 @@
   "main": "index.js",
   "dependencies": {
     "@types/express": "^4.16.0",
+    "@types/mongoose": "^5.3.7",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "mongoose": "^5.4.4",
     "path": "^0.12.7",
     "typescript": "^3.2.1"
   },
   "devDependencies": {},
   "scripts": {
     "start": "node ./build/backend/server/www.js",
+    "copy": "copyfiles app.json build/backend && ncp resources build/backend/resources",
     "backend-browse-linux": "xdg-open http://localhost:3000/api",
     "backend-browse-windows": "start http://localhost:3000/api",
-    "build": "tsc && npm run copy",
+    "build": "tsc",
     "build-browse-windows": "npm run build & npm run backend-browse-windows",
     "build-browse-linux": "npm run build & npm run backend-browse-linux"
   },

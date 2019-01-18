@@ -9,9 +9,15 @@
             "request": "launch",
             "name": "Backend",
             "program": "${workspaceFolder}/backend/app.ts",
+            "preLaunchTask": "npm: build-browse-windows",
             "outFiles": [
                 "${workspaceFolder}/backend/build/**/*.js"
             ],
+            "skipFiles": [
+                "<node_internals>/**",
+                "${workspaceFolder}/backend/node_modules/**",
+                "{workspaceFolder}/backend/**/*.js"
+            ]
         }
     ]
 }
