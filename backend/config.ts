@@ -1,5 +1,5 @@
 var config = {
-    DbConnectionString: 'localhost:3000/fmiArena'
+    DbConnectionString: 'mongodb://localhost:27017/fmiArena'
 }
 
 export default config;

@@ -3,7 +3,7 @@ import * as bodyParser from 'body-parser';
 import * as path from 'path';
 import problemRoutes from './routes/problems.routes';
 import competitionRoutes from './routes/competitions.routes';
-import { connectToMongo } from './models/mongo-connection';
+import connectToMongo from './models/mongo-connection';
 
 var app = express();
 const port = 3000;

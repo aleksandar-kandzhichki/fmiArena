@@ -2,7 +2,7 @@ import config from '../config'
 import { connect } from 'mongoose';
 
 
-export function connectToMongo() {
+export default function connectToMongo() {
     let connection = connect(config.DbConnectionString,
         {
             poolSize: 5,
