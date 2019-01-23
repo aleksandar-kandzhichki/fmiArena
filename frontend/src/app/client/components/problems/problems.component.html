@@ -2,7 +2,7 @@
 
 <h1> Problems <span *ngIf="!this.selectedTopics || this.selectedTopics.length == 0"> (all)</span></h1>
 <mat-accordion>
-  <mat-expansion-panel *ngFor="let problem of filteredProblems">
+  <mat-expansion-panel *ngFor="let problem of filteredProblems" (click)="fetchProblem(problem)">
     <mat-expansion-panel-header>
       <mat-panel-title [innerHTML]="problem.name">
       </mat-panel-title>
@@ -10,7 +10,11 @@
         Type your name and age
       </mat-panel-description> -->
     </mat-expansion-panel-header>
-    <p [innerHTML]="problem.content"></p>
-    <p [innerHTML]="problem.restrains.memory + '  ' + problem.restrains.time"></p>
+    <hr>
+    <div class="loader" *ngIf="!isFetched(problem.name, problem)">LOADING...</div>
+    <div *ngIf="isFetched(problem.name, problem)">
+      <p [innerHTML]="problem.content"></p>
+      <p [innerHTML]="problem.restrains.memory + '  ' + problem.restrains.time"></p>
+    </div>
   </mat-expansion-panel>
 </mat-accordion>

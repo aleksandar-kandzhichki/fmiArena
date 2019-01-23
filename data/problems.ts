@@ -1,15 +1,18 @@
 import { Sciences } from "./science";
 import { AllTopics } from "./topics";
 
-export interface IProblem {
+export interface IProblemPreview {
+    name: string,
+    topics: AllTopics[]
+}
+
+export interface IProblem extends IProblemPreview {
     science: number,
-    topics: AllTopics[],
     content: string,
     restrains?: {
         memory: string,
         time: string
     },
-    name: string;
 }
 
 export class Problem implements IProblem {
@@ -30,26 +33,3 @@ export class Problem implements IProblem {
     };
     name: string;
 }
-
-export const problems: IProblem[] = [
-    {
-        science: Sciences.Informatics,
-        topics: [AllTopics.Graphs],
-        content: 'This is a graphs problem',
-        restrains: {
-            memory: '1MB',
-            time: '100s',
-        },
-        name: "Graphs Only"
-    },
-    {
-        science: Sciences.Informatics,
-        topics: [AllTopics.Graphs, AllTopics.Dynamic],
-        content: 'this is graphs AND dynamic programming content',
-        restrains: {
-            memory: '1MB',
-            time: '100s',
-        },
-        name: "Informatics Graphs & dynamic"
-    }
-]

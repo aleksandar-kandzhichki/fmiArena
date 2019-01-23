@@ -30,6 +30,7 @@ export const MathTopics = {
     [AllTopics.ProbabilityStatistics]: "Probability & Statistics",
     [AllTopics.Logic]: "Logic",
     [AllTopics.Combinatorics]: "Combinatorics",
+    [AllTopics.Graphs]: "Graphs",
 }
 
 export const AlogrihmTopics = {

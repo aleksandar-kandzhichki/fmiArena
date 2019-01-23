@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AllTopics } from '../../../../../../data/topics'
-import { problems, IProblem } from '../../../../../../data/problems';
+import { IProblem } from '../../../../../../data/problems';
+import { ProblemsService } from '../../services/problems.service';
 
 @Component({
   selector: 'app-problems',
@@ -11,12 +12,14 @@ export class ProblemsComponent implements OnInit {
 
   selectedTopics: number[] = [];
   AllTopics = AllTopics;
-  allProblems = problems;
+  allProblems: IProblem[];
   filteredProblems: IProblem[] = [];
 
-  constructor() { }
+  constructor(private problemsService: ProblemsService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.allProblems = (await this.problemsService.allProblems().toPromise()) as IProblem[];
+
     this.getProblems();
   }
 
@@ -30,5 +33,17 @@ export class ProblemsComponent implements OnInit {
     if (this.selectedTopics && this.selectedTopics.length > 0)
       this.filteredProblems = this.allProblems.filter(problem => this.selectedTopics.some(selectedTopic => problem.topics.indexOf(selectedTopic) >= 0));
     else this.filteredProblems = JSON.parse(JSON.stringify(this.allProblems));
+  }
+
+  // check if problem is fetched, returns it's index in all problems
+  isFetched(name: string, problem: IProblem = null) {
+    if (problem) return this.problemsService.isFetched(problem);
+
+    let index = this.allProblems.findIndex(p => p.name == name);
+    return this.problemsService.isFetched(this.allProblems[index]);
+  }
+
+  async fetchProblem(problem: IProblem) {
+    return await this.problemsService.fetchAndUpdate(problem, [this.allProblems, this.filteredProblems]);
   }
 }
