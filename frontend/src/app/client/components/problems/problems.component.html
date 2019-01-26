@@ -1,7 +1,13 @@
-<app-select-problems many="true" (onManySelect)="changeSelectedTopics($event)"></app-select-problems>
+<div class="header-container">
+  <h1 *ngIf="!addProblem"> Problems <span *ngIf="!this.selectedTopics || this.selectedTopics.length == 0"> (all)</span></h1>
+  <h1 *ngIf="addProblem"> Submit problem </h1>
+  <button class="add-btn" (click)="addProblem = !addProblem"> {{ addProblem ? "View all" : "New"}} </button>
+</div>
 
-<h1> Problems <span *ngIf="!this.selectedTopics || this.selectedTopics.length == 0"> (all)</span></h1>
-<mat-accordion>
+<app-select-problems many="true" (onManySelect)="changeSelectedTopics($event)" (scienceChange)="selectedScience = $event"></app-select-problems>
+<br><br>
+
+<mat-accordion *ngIf="!addProblem">
   <mat-expansion-panel *ngFor="let problem of filteredProblems" (click)="fetchProblem(problem)">
     <mat-expansion-panel-header>
       <mat-panel-title [innerHTML]="problem.name">
@@ -18,3 +24,5 @@
     </div>
   </mat-expansion-panel>
 </mat-accordion>
+
+<app-add-problem *ngIf="addProblem" [problemTopics]="selectedTopics" [problemScience]="selectedScience"></app-add-problem>

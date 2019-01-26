@@ -1,0 +1,20 @@
+<form>
+  <mat-form-field class="full">
+    <input matInput name="problemName" placeholder="Name" [(ngModel)]="problem.name">
+  </mat-form-field>
+
+  <mat-form-field class="full content">
+    <textarea matInput name="content" placeholder="Content" [(ngModel)]="problem.content" class="content"></textarea>
+  </mat-form-field>
+
+  <div *ngIf="problemScience == AllSciences.Informatics">
+    <h2>Limits:</h2>
+    <mat-form-field>
+      <input matInput name="memory" placeholder="Memory" [(ngModel)]="problem.name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="time" placeholder="Time" [(ngModel)]="problem.name">
+    </mat-form-field>
+  </div>
+</form>

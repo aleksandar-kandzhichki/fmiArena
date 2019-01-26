@@ -16,8 +16,8 @@
   "scripts": {
     "start": "node ./build/backend/server/www.js",
     "copy": "copyfiles app.json build/backend && ncp resources build/backend/resources",
-    "backend-browse-linux": "xdg-open http://localhost:3000/api",
-    "backend-browse-windows": "start http://localhost:3000/api",
+    "backend-browse-linux": "xdg-open http://localhost:3000",
+    "backend-browse-windows": "start http://localhost:3000",
     "build": "tsc",
     "build-browse-windows": "npm run build & npm run backend-browse-windows",
     "build-browse-linux": "npm run build & npm run backend-browse-linux"

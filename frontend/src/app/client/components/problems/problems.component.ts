@@ -14,6 +14,8 @@ export class ProblemsComponent implements OnInit {
   AllTopics = AllTopics;
   allProblems: IProblem[];
   filteredProblems: IProblem[] = [];
+  addProblem = false;
+  selectedScience = 0;
 
   constructor(private problemsService: ProblemsService) { }
 

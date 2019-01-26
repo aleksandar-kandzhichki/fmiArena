@@ -9,8 +9,10 @@ import { CompetitionsComponent } from './components/competitions/competitions.co
 import { SelectProblemsComponent } from './components/select-problems/select-problems.component';
 import { SingleProblemComponent } from './components/single-problem/single-problem.component';
 import { HttpClient } from '@angular/common/http';
-import { MatTabsModule, MatButtonModule, MatExpansionModule } from '@angular/material';
+import { MatTabsModule, MatButtonModule, MatExpansionModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
+import { AddProblemComponent } from './components/add-problem/add-problem.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,14 @@ import { CommonModule } from '@angular/common';
     ProblemsComponent,
     CompetitionsComponent,
     SelectProblemsComponent,
-    SingleProblemComponent
+    SingleProblemComponent,
+    AddProblemComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
     RouterModule.forChild(
       clientRoutes
     ),

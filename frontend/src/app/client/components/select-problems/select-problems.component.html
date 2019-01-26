@@ -1,4 +1,4 @@
-<mat-tab-group>
+<mat-tab-group (selectedTabChange)="scienceChange.emit($event.index)">
   <mat-tab [label]="ScienceNames[Sciences.Math]">
     <div class="problems-topic">
       <button mat-raised-button *ngFor="let topic of MathTopicNames" [class.active]="isTopicActive(topic)" [innerHTML]="topic"
@@ -7,8 +7,8 @@
   </mat-tab>
   <mat-tab [label]="ScienceNames[Sciences.Informatics]">
     <div class="problems-topic">
-      <button mat-raised-button *ngFor="let topic of InformaticTopicNames" [class.active]="isTopicActive(topic)" [innerHTML]="topic"
-        (click)="selectTopic(topic)"></button>
+      <button mat-raised-button *ngFor="let topic of InformaticTopicNames" [class.active]="isTopicActive(topic)"
+        [innerHTML]="topic" (click)="selectTopic(topic)"></button>
     </div>
   </mat-tab>
   <mat-tab [label]="ScienceNames[Sciences.Physics]">
@@ -18,8 +18,8 @@
   </mat-tab>
   <mat-tab [label]="ScienceNames[Sciences.Algorithms]">
     <div class="problems-topic">
-      <button mat-raised-button *ngFor="let topic of AlgorithmTopicNames" [class.active]="isTopicActive(topic)" [innerHTML]="topic"
-        (click)="selectTopic(topic)"></button>
+      <button mat-raised-button *ngFor="let topic of AlgorithmTopicNames" [class.active]="isTopicActive(topic)"
+        [innerHTML]="topic" (click)="selectTopic(topic)"></button>
     </div>
   </mat-tab>
 </mat-tab-group>

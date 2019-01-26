@@ -27,6 +27,7 @@ export class SelectProblemsComponent implements OnInit {
 
   @Output() onSelected = new EventEmitter<number>();
   @Output() onManySelect = new EventEmitter<number[]>();
+  @Output() scienceChange = new EventEmitter<number>();
 
   constructor() {
     for (var key in MathTopics) {
